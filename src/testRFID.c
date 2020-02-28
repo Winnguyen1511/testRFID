@@ -42,7 +42,7 @@ int main(int argc, char**argv)
         {
             //do nothing
         }
-        usleep(40);
+        usleep(2000);
     }
     return SUCCESS;
 }
