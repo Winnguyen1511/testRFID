@@ -35,8 +35,10 @@ int SPI_Init(SPI_t* instance, int bus, SPI_mode_t mode, uint32_t speed, uint8_t 
 
 int SPI_Transmit(SPI_t* instance, uint8_t* pData, uint16_t Size)
 {
+    uint8_t tmp[Size];
     struct spi_ioc_transfer transfer;
-    transfer.tx_buf = pData;
+    transfer.tx_buf = (unsigned long)pData;
+    transfer.rx_buf = (unsigned long)tmp;
     transfer.len = Size;
     transfer.speed_hz = instance->speed;
     transfer.bits_per_word = instance->bits_per_words;
@@ -51,8 +53,10 @@ int SPI_Transmit(SPI_t* instance, uint8_t* pData, uint16_t Size)
 }
 int SPI_Receive(SPI_t* instance, uint8_t* pData, uint16_t Size)
 {
+    uint8_t tmp[Size];
     struct spi_ioc_transfer transfer;
-    transfer.rx_buf = pData;
+    transfer.rx_buf = (unsigned long)pData;
+    transfer.tx_buf = (unsigned long)tmp;
     transfer.len = Size;
     transfer.speed_hz = instance->speed;
     transfer.bits_per_word = instance->bits_per_words;
