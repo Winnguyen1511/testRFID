@@ -1,8 +1,8 @@
 # RFID RC522 with Raspebery Pi 3B+
-Author: Nguyen Huynh Dang Khoa - Victor Nguyen
-February 2020
-Major: Embedded System - Computer Science
-University: Danang University of Sciences and Technology
+Author: Nguyen Huynh Dang Khoa - Victor Nguyen  
+February 2020  
+Major: Embedded System - Computer Science  
+University: Danang University of Sciences and Technology  
 
 ## About
 This project is to learn about the RFID scanner RC522 which is very popular in the marketplace.  
