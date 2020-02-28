@@ -16,7 +16,7 @@ int SPI_Init(SPI_t* instance, int bus, SPI_mode_t mode, uint32_t speed, uint8_t 
         return ERROR;
     }
     instance->mode = mode;
-    if(ioctl(instance->file_description, SPI_IOC_WR_MODE, &(instance->mode) == -1))
+    if(ioctl(instance->file_description, SPI_IOC_WR_MODE, &(instance->mode)) == -1)
     {
         printf("Error: Cannot set mode to %d\n", instance->mode);
         return ERROR;
